@@ -22,5 +22,9 @@ class Coin_changer_test < Minitest::Test
 		assert_equal({"penny" => 2}, call_hash)
 	end
 
+	def test_nickel_is_5
+		call_hash = coinchanger_app(5)
+		assert_equal({"nickel" => 1}, call_hash)
+	end
 
 end
