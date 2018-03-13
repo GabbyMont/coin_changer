@@ -1,13 +1,12 @@
 def coinchanger_app(cents)
 	coins = {}
-	# if cents >= 25
-	# 	coins["Quarter"] = cents/25
-	#   cents = cents % 25
-	# end
+	if cents >= 25
+		coins["quarter"] = cents/25
+	  cents = cents % 25
+	end
 	if cents >= 10
 		coins["dime"] = cents/10
 	  cents = cents % 10
-	  p cents
 	end
 	if cents >= 5
 		coins["nickel"] = cents/5

@@ -42,4 +42,13 @@ class Coin_changer_test < Minitest::Test
 		assert_equal({"dime" => 1}, call_hash)
 	end
 
+	def test_for_one_quarter
+		call_hash = coinchanger_app(25)
+		assert_equal({"quarter" => 1}, call_hash)
+	end
+
+	def test_for_1dime_1nickel_4pennies
+		call_hash = coinchanger_app(18)
+		assert_equal({"dime" => 1, "nickel" => 1, "penny" => 3}, call_hash)
+	end
 end
