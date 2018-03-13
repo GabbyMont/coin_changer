@@ -1,3 +1,7 @@
 def coinchanger_app(cents)
-	my_hash = {"Penny" => 1}
+	coins = {}
+	if cents <= 4
+		coins["penny"] = cents
+	end
+	coins
 end

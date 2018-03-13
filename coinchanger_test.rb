@@ -14,7 +14,13 @@ class Coin_changer_test < Minitest::Test
 
 	def test_onecent_for_onepenny
 		call_hash = coinchanger_app(1)
-		assert_equal({"Penny" => 1}, call_hash)
+		assert_equal({"penny" => 1}, call_hash)
 	end
+
+	def test_two_pennies
+		call_hash = coinchanger_app(2)
+		assert_equal({"penny" => 2}, call_hash)
+	end
+
 
 end
