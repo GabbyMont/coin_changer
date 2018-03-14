@@ -106,4 +106,9 @@ class Coin_changer_test < Minitest::Test
 		hashtest = {"quarter" => 2, "dime" => 0, "nickel" => 1, "penny" => 4}
 		assert_equal({"quarters" => 2, "dimes" => 0, "nickel" => 1, "pennies" => 4}, plural_coins(hashtest))
 	end
+
+	def test_59_cents
+		hashtest = {"quarter" => 1, "dime" => 1, "nickel" => 1, "penny" => 1}
+		assert_equal({"quarter" => 1, "dime" => 1, "nickel" => 1, "penny" => 1}, plural_coins(hashtest))
+	end
 end
