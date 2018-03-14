@@ -62,4 +62,23 @@ class Coin_changer_test < Minitest::Test
 		assert_equal({"quarter" => 3, "dime" => 1, "nickel" => 1, "penny" => 3}, call_hash)
 	end
 
+	def test_for_hash
+		call_hash = plural_coins({"quarters" => 2})
+		assert_equal(Hash, call_hash.class)
+	end
+
+	# def test_for_plural_hashes
+	# 	plural_coins = {"quarter" => 2, "dime" => 0, "nickel" => 1, "penny" => 4}
+	# 	assert_equal({"quarters" => 2, "dimes" => 0, "nickel" => 1, "pennies" => 4}, plural_coins)
+	# end
+
+	def test_one_plural
+		hashtest = {"quarter" => 2}
+		assert_equal({"quarters" => 2}, plural_coins(hashtest))
+	end
+
+	# def test_plural_dimes
+	# 	hashtest = {"dime" => 2}
+	# 	assert_equal({"dimes" => 2}, plural_coins(hashtest))
+	# end
 end

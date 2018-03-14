@@ -18,3 +18,15 @@ def coinchanger_app(cents)
 	coins
 end
 
+def plural_coins(coins)
+	coin_hash = {}
+	coins.each {|key,value|
+		if value > 1
+			coin_hash["quarters"] = value 
+		end
+
+	}
+
+ 	return coin_hash
+
+end
