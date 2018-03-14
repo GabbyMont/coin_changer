@@ -26,6 +26,8 @@ def plural_coins(coins)
 				coin_hash["quarters"] = value
 			elsif key == "dime"
 				coin_hash["dimes"] = value
+			elsif key == "nickel"
+				coin_hash["nickels"] = value
 			end 
 		end
 
