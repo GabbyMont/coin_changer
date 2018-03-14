@@ -31,6 +31,9 @@ def plural_coins(coins)
 			elsif key == "penny"
 				coin_hash["pennies"] = value
 			end
+		else
+			coin_hash[key] = value
+
 		end
 
 
