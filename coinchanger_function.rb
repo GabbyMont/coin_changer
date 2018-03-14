@@ -17,3 +17,4 @@ def coinchanger_app(cents)
 	end
 	coins
 end
+
