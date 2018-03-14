@@ -22,7 +22,11 @@ def plural_coins(coins)
 	coin_hash = {}
 	coins.each {|key,value|
 		if value > 1
-			coin_hash["quarters"] = value 
+			if key == "quarter"
+				coin_hash["quarters"] = value
+			elsif key == "dime"
+				coin_hash["dimes"] = value
+			end 
 		end
 
 	}
