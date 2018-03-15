@@ -97,25 +97,21 @@ class Coin_changer_test < Minitest::Test
 		assert_equal({"quarters" => 2, "dimes" => 2, "nickels" => 2, "pennies" => 2}, plural_coins(hashtest))
 	end
 
-		def test_all_plural
-		hashtest = {"quarter" => 0, "dime" => 0, "nickel" => 0, "penny" => 0}
-		assert_equal({"quarters" => 0, "dimes" => 0, "nickels" => 0, "pennies" => 0}, plural_coins(hashtest))
+
+	def test_9_cents
+		hashtest = {"quarter" => 2, "dime" => 1, "nickel" => 1, "penny" => 4}
+		assert_equal({"quarters" => 2, "dime" => 1, "nickel" => 1, "pennies" => 4}, plural_coins(hashtest))
 	end
 
-	def test_59_cents
-		hashtest = {"quarter" => 2, "dime" => 0, "nickel" => 1, "penny" => 4}
-		assert_equal({"quarters" => 2, "dimes" => 0, "nickel" => 1, "pennies" => 4}, plural_coins(hashtest))
-	end
-
-	def test_59_cents
+	def test_1_each
 		hashtest = {"quarter" => 1, "dime" => 1, "nickel" => 1, "penny" => 1}
 		assert_equal({"quarter" => 1, "dime" => 1, "nickel" => 1, "penny" => 1}, plural_coins(hashtest))
 	end
 
-	def test_both_hashes_49_cents
-		cents = 49
+	def test_both_hashes_59_cents
+		cents = 59
 		singular_plural = coinchanger_app(cents)
-		assert_equal({"quarter" => 1, "dimes" => 2, "nickels" => 0, "pennies" => 4}, plural_coins(singular_plural))
+		assert_equal({"quarters" => 2, "nickel" => 1, "pennies" => 4}, plural_coins(singular_plural))
 	end
 
 end
