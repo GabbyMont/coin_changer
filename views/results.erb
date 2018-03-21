@@ -1,0 +1,9 @@
+<h3>The amount you entered: <%=coinamount%> cents.<br> Your new amount is: <br><% results.each_pair do |key, value| %> 
+<%=value%> <%=key%>, <!-- ex) quater: 2 -->
+<%end%></h3>
+<h3>Thank You!</h3><br>
+<h4>Enter new amount here:</h4>
+<form method = "post" action = "changer">
+	<input type = "number" name = "coinamount">
+	<input type="submit" value = "Retry">
+</form>
